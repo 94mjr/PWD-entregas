@@ -71,7 +71,7 @@ pre {
     
       <ul class="nav navbar-nav ">
         <li><a href="index.php"><!--<span class="glyphicon glyphicon-home"></span>-->
-      <img src="mi_logo.jpg" alt="Logo" style="height: 40px; margin-top: -4px;">
+      <img src="" alt="Logo" style="height: 40px; margin-top: -4px;">
       Romero Melany
       </a></li>
 		<li><a href="cartelera.php">Cartelera</a></li>
@@ -158,3 +158,4 @@ pre {
 </div>
  
 </body>
+
