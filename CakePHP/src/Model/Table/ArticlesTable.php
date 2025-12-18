@@ -2,21 +2,15 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\Validation\Validator;
 use Cake\Utility\Text;
 use Cake\Event\EventInterface;
-use Cake\Validation\Validator;
 
 class ArticlesTable extends Table
 {
     public function initialize(array $config): void
     {
-        parent::initialize($config);
-
         $this->addBehavior('Timestamp');
-
-        // Relaciones con Users y Tags
-        $this->belongsTo('Users');
-        $this->belongsToMany('Tags');
     }
 
     public function beforeSave(EventInterface $event, $entity, $options)
@@ -31,12 +25,11 @@ class ArticlesTable extends Table
     {
         $validator
             ->notEmptyString('title')
-            ->minLength('title', 10)
+            ->minLength('title', 3)
             ->maxLength('title', 255)
             ->notEmptyString('body')
-            ->minLength('body', 10);
+            ->minLength('body', 3);
 
         return $validator;
     }
 }
-

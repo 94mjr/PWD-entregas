@@ -1,12 +1,9 @@
 <h1>Edit Article</h1>
-
-<?= $this->Form->create($article) ?>
-<?= $this->Form->control('title') ?>
-<?= $this->Form->control('body', ['rows' => 4]) ?>
-<?= $this->Form->control('tags._ids', [
-    'type' => 'select',
-    'multiple' => true,
-    'options' => $tags
-]) ?>
-<?= $this->Form->button('Update Article') ?>
-<?= $this->Form->end() ?>
+<?php
+    echo $this->Form->create($article);
+    echo $this->Form->control('user_id', ['type' => 'hidden']);
+    echo $this->Form->control('title');
+    echo $this->Form->control('body', ['rows' => '3']);
+    echo $this->Form->button(__('Save Article'));
+    echo $this->Form->end();
+?>
